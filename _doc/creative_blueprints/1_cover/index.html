@@ -1,39 +1,48 @@
 <style>
-  .mode-landscape .sl-cover-layout { display: flex; flex-direction: row; align-items: stretch; min-height: 100%; }
-  .mode-landscape .sl-content-panel { width: 55%; display: flex; flex-direction: column; justify-content: center; }
-  .mode-landscape .sl-image-panel { width: 45%; min-height: 0; }
-  .mode-portrait .sl-cover-layout { display: flex; flex-direction: column; min-height: 100%; }
-  .mode-portrait .sl-content-panel { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-bottom: 1.5rem; }
-  .mode-portrait .sl-image-panel { min-height: 280px; flex-shrink: 0; }
+.mode-landscape .sl-root { flex-direction: row; }
+.mode-portrait .sl-root { flex-direction: column; }
+.mode-landscape .sl-left { width: 52%; }
+.mode-landscape .sl-right { width: 48%; }
+.mode-portrait .sl-left { width: 100%; flex: 1; }
+.mode-portrait .sl-right { width: 100%; height: 40%; }
 </style>
 <section class="w-full h-full overflow-auto bg-white">
-  <div class="sl-cover-layout h-full">
-    <div class="sl-content-panel px-10 py-12">
-      <div class="flex flex-col justify-between h-full">
-        <div>
-          <p class="text-sm font-medium tracking-widest uppercase mb-6" style="color:#0066CC;">Travel Enthusiast</p>
-          <h1 class="text-5xl font-bold text-slate-900 leading-tight mb-6">Unified Travel Planning</h1>
-          <p class="text-xl text-slate-600 leading-relaxed max-w-md mb-6">Everything you need for your next adventure in one intuitive platform.</p>
-          <div class="inline-flex items-center gap-3 border rounded-lg px-4 py-3" style="background-color:#FF6B35; border-color:#0066CC40;">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#0066CC;">
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-            <span class="text-sm font-medium px-1" style="color:#ffffff;">Core vision: Simplified productivity</span>
+  <div class="sl-root flex h-full">
 
-          </div>
+    <!-- Left: Content -->
+    <div class="sl-left flex flex-col justify-between p-10">
+      <div>
+        <div class="flex items-center gap-2 mb-8">
+          <span class="inline-block w-2 h-2 rounded-full bg-green-700"></span>
+          <span class="text-xs font-bold tracking-widest text-green-700 uppercase">Zimbabwe Travel Discovery</span>
         </div>
-        <div class="mt-auto pt-8">
-          <data-attribution />
+        <h1 class="text-4xl font-black text-slate-900 leading-tight mb-4">
+          Every Corner<br/>of Zimbabwe,<br/>
+          <span class="text-green-700">Discovered.</span>
+        </h1>
+        <p class="text-sm text-slate-500 leading-relaxed max-w-xs">
+          Official ZTA listings, local knowledge, and business-verified details — the definitive map of Zimbabwe's restaurants, lodges, national parks, and hidden gems.
+        </p>
+      </div>
+      <div>
+        <div class="flex flex-wrap gap-2 mb-5">
+          <span class="px-3 py-1 bg-green-50 text-green-800 text-xs font-semibold rounded-full border border-green-200">ZTA Verified Data</span>
+          <span class="px-3 py-1 bg-amber-50 text-amber-800 text-xs font-semibold rounded-full border border-amber-200">Crowdsourced</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-semibold rounded-full">B2B Owner Portal</span>
         </div>
+        <data-attribution />
       </div>
     </div>
-    <div class="sl-image-panel relative overflow-hidden">
-      <div class="absolute inset-0" style="background:linear-gradient(135deg, #0066CC, #0066CC20);"></div>
-      <div class="absolute inset-0 flex items-center justify-center p-8">
-        <img src="http://localhost:8001/common/image-generation?prompt=modern+travel+planning+app+interface+globe+airplane+maps&amp;keyspace=b8ofgz3h&amp;user_id=4806" alt="cover" class="max-w-full max-h-full object-contain drop-shadow-2xl rounded-2xl" />
-      </div>
+
+    <!-- Right: Hero image -->
+    <div class="sl-right relative overflow-hidden">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=zimbabwe%20victoria%20falls%20aerial%20mist%20lush%20tropical%20landscape%20golden%20hour%20cinematic%20photography"
+        alt="Zimbabwe Victoria Falls landscape"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent"></div>
     </div>
+
   </div>
 </section>
