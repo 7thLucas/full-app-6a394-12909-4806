@@ -53,6 +53,7 @@ export default {
         },
         navbar: {
           DEFAULT: "var(--navbar-background)",
+          background: "var(--navbar-background)",
         },
         sidebar: {
           DEFAULT: "var(--sidebar-background)",

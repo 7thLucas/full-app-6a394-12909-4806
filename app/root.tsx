@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import { ConfigurablesProvider, ConfigurablesCSSBridge } from "~/modules/configurables";
 import { GlobalError } from "./error";
+import { AuthProvider } from "~/modules/authentication/use-authentication";
 
 function ErrorReporter({ error }: { error: any }) {
   useEffect(() => {
@@ -105,9 +106,11 @@ export default function App() {
         <RouteChangeReporter />
         <ConfigurablesProvider>
           <ConfigurablesCSSBridge />
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Outlet />
-          </ThemeProvider>
+          <AuthProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <Outlet />
+            </ThemeProvider>
+          </AuthProvider>
         </ConfigurablesProvider>
         <ScrollRestoration />
         <Scripts />

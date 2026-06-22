@@ -100,57 +100,85 @@ export type TDefaultConfigurableData = {
 };
 
 export const defaultConfigurablesData: TDefaultConfigurableData = {
-  appName: "My App",
+  appName: "ZimSpots",
   logoUrl: "",
+  tagline: "Discover Zimbabwe",
+  heroSubtitle: "Restaurants, lodges, parks & hidden local gems across Zimbabwe.",
+  searchPlaceholder: "Find a spot, a meal, or an adventure...",
+  categories: [
+    { id: "restaurants", label: "Restaurants", icon: "UtensilsCrossed" },
+    { id: "lodging", label: "Lodging", icon: "BedDouble" },
+    { id: "safari", label: "Safari & Parks", icon: "Binoculars" },
+    { id: "historical", label: "Historical Sites", icon: "Landmark" },
+    { id: "braai", label: "Braai & Local Eats", icon: "Flame" },
+  ],
+  regions: [
+    { id: "harare", name: "Harare", imageUrl: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80", isActive: true },
+    { id: "bulawayo", name: "Bulawayo & Matobo", imageUrl: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=400&q=80", isActive: false },
+    { id: "victoria-falls", name: "Victoria Falls", imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&q=80", isActive: false },
+    { id: "eastern-highlands", name: "Eastern Highlands", imageUrl: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=400&q=80", isActive: false },
+    { id: "kariba", name: "Kariba & Great Zimbabwe", imageUrl: "https://images.unsplash.com/photo-1612195583950-b8fd34c87093?w=400&q=80", isActive: false },
+  ],
+  badges: [
+    { id: "zim-explorer", name: "Zim Explorer", description: "Add your first spot", icon: "Map", requiredSpots: 1 },
+    { id: "local-foodie", name: "Local Foodie", description: "Add 5 food spots", icon: "UtensilsCrossed", requiredSpots: 5 },
+    { id: "safari-scout", name: "Safari Scout", description: "Add 3 park or nature spots", icon: "Binoculars", requiredSpots: 10 },
+    { id: "city-guide", name: "City Guide", description: "Add 20 spots total", icon: "Trophy", requiredSpots: 20 },
+  ],
+  showOfflinePacksFeature: true,
+  showCrowdsourcingFAB: true,
+  defaultRegion: "harare",
+  trendingGridColumns: 2,
+  maxTrendingSpots: 10,
   brandColor: {
     // Base
     background:        "#ffffff",
-    foreground:        "#09090b",
+    foreground:        "#1a1a1a",
     // Card
-    card:              "#ffffff",
-    cardForeground:    "#09090b",
+    card:              "#fafaf7",
+    cardForeground:    "#1a1a1a",
     // Popover
     popover:           "#ffffff",
-    popoverForeground: "#09090b",
-    // Primary
-    primary:           "#2563eb",
+    popoverForeground: "#1a1a1a",
+    // Primary — Deep Safari Green
+    primary:           "#1E3F20",
     primaryForeground: "#ffffff",
-    // Secondary
-    secondary:           "#f4f4f5",
-    secondaryForeground: "#18181b",
+    // Secondary — warm off-white
+    secondary:           "#f0f4f0",
+    secondaryForeground: "#1a1a1a",
     // Muted
-    muted:           "#f4f4f5",
-    mutedForeground: "#71717a",
-    // Accent
-    accent:           "#f4f4f5",
-    accentForeground: "#18181b",
+    muted:           "#f0f4f0",
+    mutedForeground: "#6B7280",
+    // Accent — Sunset Gold
+    accent:           "#D97706",
+    accentForeground: "#ffffff",
     // Destructive
-    destructive:           "#ef4444",
-    destructiveForeground: "#fafafa",
+    destructive:           "#DC2626",
+    destructiveForeground: "#ffffff",
     // Border / Input / Ring
-    border: "#e4e4e7",
-    input:  "#e4e4e7",
-    ring:   "#2563eb",
+    border: "#E5E7EB",
+    input:  "#E5E7EB",
+    ring:   "#1E3F20",
     // Charts
-    chart1: "#f97316",
-    chart2: "#0d9488",
-    chart3: "#1e3a5f",
-    chart4: "#d4a017",
-    chart5: "#ea580c",
-    // Navbar
+    chart1: "#D97706",
+    chart2: "#1E3F20",
+    chart3: "#16A34A",
+    chart4: "#DC2626",
+    chart5: "#6B7280",
+    // Navbar — bottom nav white
     navbarBackground: "#ffffff",
     // Sidebar
-    sidebarBackground:        "#fafafa",
-    sidebarForeground:        "#3f3f46",
-    sidebarPrimary:           "#2563eb",
+    sidebarBackground:        "#fafaf7",
+    sidebarForeground:        "#1a1a1a",
+    sidebarPrimary:           "#1E3F20",
     sidebarPrimaryForeground: "#ffffff",
-    sidebarAccent:            "#f4f4f5",
-    sidebarAccentForeground:  "#18181b",
-    sidebarBorder:            "#e4e4e7",
-    sidebarRing:              "#2563eb",
+    sidebarAccent:            "#f0f4f0",
+    sidebarAccentForeground:  "#1a1a1a",
+    sidebarBorder:            "#E5E7EB",
+    sidebarRing:              "#1E3F20",
   },
   font: {
-    headingFont: "Plus Jakarta Sans",
+    headingFont: "Inter",
     textFont: "Inter",
   },
   // ─────────────────────────────────────────────────────────────────────

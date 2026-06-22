@@ -8,6 +8,8 @@ import { createServer } from "node:http";
 import apiRoutes from "./app/api";
 import { runSeeds } from "~/api/seeds";
 import mongoose from "mongoose";
+import spotsRouter from "./app/spots/routes/spots.routes";
+import { seedSpots } from "./app/spots/seeds/spots.seed";
 import fs from "node:fs";
 
 const PORT = Number.parseInt(process.env.PORT || "3000");
@@ -29,6 +31,7 @@ async function startServer() {
 
     // Run all seeds
     await runSeeds();
+    await seedSpots();
 
   } catch (error) {
     console.error("Failed to connect to MongoDB:", error);
@@ -55,6 +58,9 @@ async function startServer() {
     console.log(`[API Route] ${req.method} ${req.path}`);
     next();
   }, apiRoutes);
+
+  // Spots API routes
+  app.use(spotsRouter);
 
   // Remix handler
   if (DEVELOPMENT) {
